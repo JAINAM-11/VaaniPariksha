@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaaniPariksha — Admin Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234F46E5%22/><path d=%22M25 30h50M25 50h50M25 70h30%22 stroke=%22%23E0E7FF%22 stroke-width=%228%22 stroke-linecap=%22round%22/><path d=%22M60 65l10 10 20-20%22 stroke=%22%2310B981%22 stroke-width=%2210%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+  <meta name="description" content="VaaniPariksha admin dashboard showing active sessions, exam stats, and completion status.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="admin-page">
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+  </div>
+
+  <header class="top-nav">
+    <div class="brand">
+      <span class="brand-icon">🎙</span>
+      <span class="brand-name">VaaniPariksha</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/" class="nav-link">Take exam</a>
+      <a href="/admin" class="nav-link active">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-hero">
+      <h1 class="admin-title">Admin Dashboard</h1>
+      <p class="admin-sub">Live exam monitoring · Auto-refreshes every 10 seconds</p>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="btn-secondary btn-small" onclick="loadDashboard()">🔄 Refresh Now</button>
+      </div>
+    </div>
+
+    <!-- Integrated Upload Card (Now Permanent) -->
+    <div id="dashboardUploadCard" class="card upload-card" style="margin-bottom: 2rem;">
+      <div class="admin-card-header">
+        <span class="admin-card-title">📄 Upload Question Paper</span>
+      </div>
+      <div id="uploadZone" class="drop-zone" role="button" tabindex="0"
+           aria-label="Drop PDF here or click to browse"
+           ondragover="handleDragOver(event)" ondrop="handleDrop(event)"
+           ondragleave="handleDragLeave(event)" onclick="document.getElementById('pdfInput').click()"
+           style="padding: 2rem; border-style: dashed; margin-top: 1rem;">
+        <div class="drop-icon">📋</div>
+        <div class="drop-text">Drop your Exam PDF here</div>
+        <div class="drop-sub">or click to browse</div>
+        <input type="file" id="pdfInput" accept=".pdf" hidden onchange="handleFileSelect(event)">
+      </div>
+
+      <!-- Exam metadata -->
+      <div class="upload-form" id="uploadForm" style="display:none; margin-top: 1.5rem;">
+        <div class="file-preview" id="filePreview"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="examTitle">Exam Title</label>
+            <input id="examTitle" type="text" class="form-input" placeholder="e.g. History Paper 1" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="examDuration">Duration (mins)</label>
+            <input id="examDuration" type="number" class="form-input" value="60">
+          </div>
+        </div>
+        <button id="uploadBtn" class="btn-primary" onclick="uploadPDF()">
+          <span class="btn-icon">⚡</span> Parse & Upload
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div id="uploadProgress" class="upload-progress" style="display:none; margin-top: 1rem;">
+        <div class="progress-label" id="progressLabel">Processing...</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary cards -->
+    <div class="stats-grid">
+      <div class="stat-card stat-exams">
+        <div class="stat-icon">📄</div>
+        <div class="stat-value" id="totalExams">—</div>
+        <div class="stat-label">Total Exams</div>
+      </div>
+      <div class="stat-card stat-active">
+        <div class="stat-icon">🟢</div>
+        <div class="stat-value" id="activeSessions">—</div>
+        <div class="stat-label">Active Sessions</div>
+      </div>
+      <div class="stat-card stat-submitted">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value" id="submittedSessions">—</div>
+        <div class="stat-label">Submitted</div>
+      </div>
+      <div class="stat-card stat-crashed">
+        <div class="stat-icon">⚠️</div>
+        <div class="stat-value" id="crashedSessions">—</div>
+        <div class="stat-label">Crashed</div>
+      </div>
+    </div>
+
+    <!-- Active sessions table -->
+    <div class="card admin-card">
+      <div class="admin-card-header">
+        <span class="admin-card-title">🟢 Active Sessions</span>
+        <span class="live-badge">LIVE</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="activeTable" role="table">
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Student ID</th>
+              <th>Exam Code</th>
+              <th>Current Q</th>
+              <th>Time Left</th>
+              <th>Last Saved</th>
+            </tr>
+          </thead>
+          <tbody id="activeTableBody">
+            <tr><td colspan="6" class="table-empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Submitted sessions table -->
+    <div class="card admin-card">
+      <div class="admin-card-header">
+        <span class="admin-card-title">✅ Submitted Sessions</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="submittedTable" role="table">
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Student ID</th>
+              <th>Exam Code</th>
+              <th>Submitted At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="submittedTableBody">
+            <tr><td colspan="5" class="table-empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Exams table -->
+    <div class="card admin-card">
+      <div class="admin-card-header">
+        <span class="admin-card-title">📋 All Exams</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="examsTable" role="table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Title</th>
+              <th>Questions</th>
+              <th>Duration</th>
+              <th>Sessions</th>
+              <th>Submitted</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="examsTableBody">
+            <tr><td colspan="8" class="table-empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-icon">✏️</div>
+      <h2 class="modal-title">Edit Exam</h2>
+      <div class="form-group" style="text-align:left; margin-bottom:1rem">
+        <label>Exam Title</label>
+        <input type="text" id="editTitle" class="form-input" style="width:100%">
+      </div>
+      <div class="form-group" style="text-align:left; margin-bottom:1.5rem">
+        <label>Duration (Minutes)</label>
+        <input type="number" id="editDuration" class="form-input" style="width:100%">
+      </div>
+      <div class="modal-actions">
+        <button class="btn-primary" onclick="submitEdit()">💾 Save Changes</button>
+        <button class="btn-secondary" onclick="closeEditModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div id="deleteModal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-icon">🗑️</div>
+      <h2 class="modal-title">Delete Exam?</h2>
+      <p class="modal-note">This action is permanent. All questions and student sessions associated with this exam will be deleted.</p>
+      <div class="modal-actions">
+        <button class="btn-danger" id="confirmDeleteBtn">🗑️ Yes, Delete</button>
+        <button class="btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/upload.js"></script>
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

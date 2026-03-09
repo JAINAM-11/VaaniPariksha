@@ -1,0 +1,39 @@
+# Virtual environments
+venv/
+env/
+.env
+
+# Cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# Local app data
+instance/
+uploads/
+generated_pdfs/
+logs/
+*.sqlite
+*.db
+
+# Tests and examples
+tests/
+sample_exam/
+models_vosk/
+
+# Git and IDE
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Misc scratch files
+*.log
+!requirements.txt

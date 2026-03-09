@@ -1,0 +1,252 @@
+[2026-03-09T03:32:35.686222] STT: Let's move ahead
+[2026-03-09T03:32:35.686222] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:32:35.686222] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T03:32:35.688916] STT: How much time is left?
+[2026-03-09T03:32:35.688916] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:32:35.688916] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T03:32:35.690517] STT: Actually, New Delhi is the capital.
+[2026-03-09T03:32:35.690517] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:32:35.690517] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T03:32:35.691380] STT: Add that it is a beautiful city.
+[2026-03-09T03:32:35.691380] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:32:35.691380] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T03:35:04.815522] STT: Option c.
+[2026-03-09T03:35:04.815522] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:35:04.815522] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T03:35:29.570018] STT: Option b.
+[2026-03-09T03:35:29.570018] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:35:29.570018] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T03:35:48.795726] STT: Photosynthesis.
+[2026-03-09T03:35:48.795726] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T03:35:48.795726] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:22.167868] STT: There is
+[2026-03-09T05:20:22.167868] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:22.167868] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:25.880878] STT: Previous question
+[2026-03-09T05:20:25.880878] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:25.880878] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:28.900817] STT: Previous question
+[2026-03-09T05:20:28.900817] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:28.900817] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:30.123006] STT: Previous question
+[2026-03-09T05:20:30.123006] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:30.123006] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:31.143938] STT: Previous question
+[2026-03-09T05:20:31.143938] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:31.143938] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:31.578486] STT: Previous question
+[2026-03-09T05:20:31.578486] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:31.578486] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:31.713834] STT: Previous question
+[2026-03-09T05:20:31.713834] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:31.713834] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:31.718232] STT: Previous question
+[2026-03-09T05:20:31.718232] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:31.718232] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.049735] STT: Previous question
+[2026-03-09T05:20:32.049735] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.049735] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.078054] STT: Previous question
+[2026-03-09T05:20:32.078054] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.078054] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.391256] STT: Previous question
+[2026-03-09T05:20:32.391256] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.391256] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.536866] STT: Previous question
+[2026-03-09T05:20:32.536866] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.536866] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.700466] STT: Previous question
+[2026-03-09T05:20:32.700466] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.700466] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.857634] STT: Previous question
+[2026-03-09T05:20:32.857634] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.857634] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:32.864207] STT: Previous question
+[2026-03-09T05:20:32.864207] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:32.864207] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:33.191136] STT: Previous question
+[2026-03-09T05:20:33.191136] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:33.191136] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:33.370477] STT: Previous question
+[2026-03-09T05:20:33.370477] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:33.370477] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:33.380662] STT: Previous question
+[2026-03-09T05:20:33.380662] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:33.380662] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:35.555563] STT: Go to question 6
+[2026-03-09T05:20:35.555563] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:35.555563] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:36.915947] STT: Go to question 2
+[2026-03-09T05:20:36.915947] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:36.915947] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:37.588313] STT: Go to question 1
+[2026-03-09T05:20:37.588313] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:37.588313] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:38.540283] STT: Go to question 1
+[2026-03-09T05:20:38.540283] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:38.540283] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:38.599364] STT: Go to question 1
+[2026-03-09T05:20:38.599364] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:38.599364] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:38.796780] STT: Go to question 1
+[2026-03-09T05:20:38.796780] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:38.796780] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:20:47.532981] STT: Move to question number one.
+[2026-03-09T05:20:47.532981] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:20:47.532981] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:42:00.064474] STT: There is.
+[2026-03-09T05:42:00.064474] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:42:00.064474] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:42:04.486336] STT: Previous question
+[2026-03-09T05:42:04.486336] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:42:04.486336] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:42:06.622424] STT: Go to question 1
+[2026-03-09T05:42:06.622424] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:42:06.622424] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:47:25.500867] STT: Option c.
+[2026-03-09T05:47:25.500867] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:47:25.500867] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:47:28.905381] STT: Previous question
+[2026-03-09T05:47:28.905381] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}
+[2026-03-09T05:47:28.905381] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:52:10.694322] STT: Martin.
+[2026-03-09T05:52:10.694322] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T05:52:10.694322] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:58:06.125143] STT: For the synthesis is the process where none.
+[2026-03-09T05:58:06.125143] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T05:58:06.125143] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T05:58:23.172468] STT: For the synthesis is a process.
+[2026-03-09T05:58:23.172468] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T05:58:23.172468] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T06:03:50.117457] STT: 30.
+[2026-03-09T06:03:50.117457] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T06:03:50.117457] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T06:04:08.825324] STT: There is
+[2026-03-09T06:04:08.825324] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T06:04:08.825324] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T06:04:18.503258] STT: Marlene.
+[2026-03-09T06:04:18.503258] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T06:04:18.503258] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T06:05:51.079169] STT: Photosynthesis is a process.
+[2026-03-09T06:05:51.079169] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T06:05:51.079169] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T06:06:39.754969] STT: Photosynthesis is a process.
+[2026-03-09T06:06:39.754969] LLM: {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}
+[2026-03-09T06:06:39.754969] ACTION: {'action': 'command', 'command': 'next', 'meta': {'type': 'command', 'command': 'next', 'spoken_message': 'Moving to next question.', 'answer_action': 'none'}, 'message': 'Moving to next question.'}
+--------------------
+[2026-03-09T06:15:37.180841] STT: 4,000 testes.
+[2026-03-09T06:15:37.180841] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:15:37.180841] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:15:52.790172] STT: Fortress.
+[2026-03-09T06:15:52.790172] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:15:52.790172] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:16:04.851207] STT: For the synthesis.
+[2026-03-09T06:16:04.851207] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:16:04.851207] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:16:23.241255] STT: For testing test case.
+[2026-03-09T06:16:23.241255] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:16:23.241255] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:16:37.505804] STT: Repeat the course.
+[2026-03-09T06:16:37.505804] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:16:37.505804] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:16:50.238074] STT: Residue the course.
+[2026-03-09T06:16:50.238074] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:16:50.238074] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:17:07.505135] STT: Repeat the question.
+[2026-03-09T06:17:07.505135] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:17:07.505135] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:31:07.098060] STT: For the synthesis process.
+[2026-03-09T06:31:07.098060] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:31:07.098060] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T06:31:20.129863] STT: For the synthesis, it's a process.
+[2026-03-09T06:31:20.129863] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T06:31:20.129863] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T16:18:08.743303] STT: Go to question three.
+[2026-03-09T16:18:08.743303] LLM: {'type': 'command', 'command': 'goto', 'target_question': 3, 'answer_action': 'none', 'answer_text': None, 'spoken_message': 'Navigating to question 3.', 'requires_confirmation': False, 'choice_letter': None}
+[2026-03-09T16:18:08.743303] ACTION: {'action': 'command', 'command': 'goto', 'meta': {'type': 'command', 'command': 'goto', 'target_question': 3, 'answer_action': 'none', 'answer_text': None, 'spoken_message': 'Navigating to question 3.', 'requires_confirmation': False, 'choice_letter': None}, 'message': 'Navigating to question 3.'}
+--------------------
+[2026-03-09T16:18:30.436973] STT: Motor portion number four.
+[2026-03-09T16:18:30.436973] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T16:18:30.436973] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T16:18:43.897222] STT: Move to question number four.
+[2026-03-09T16:18:43.897222] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T16:18:43.897222] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T16:19:02.026676] STT: More pro question number four.
+[2026-03-09T16:19:02.026676] LLM: {'type': 'command', 'command': 'goto', 'target_question': 4, 'answer_action': 'none', 'answer_text': None, 'spoken_message': 'Going to question number 4.', 'requires_confirmation': False, 'choice_letter': None}
+[2026-03-09T16:19:02.026676] ACTION: {'action': 'command', 'command': 'goto', 'meta': {'type': 'command', 'command': 'goto', 'target_question': 4, 'answer_action': 'none', 'answer_text': None, 'spoken_message': 'Going to question number 4.', 'requires_confirmation': False, 'choice_letter': None}, 'message': 'Going to question number 4.'}
+--------------------
+[2026-03-09T16:24:55.849092] STT: Go to person number three.
+[2026-03-09T16:24:55.849092] LLM: {'type': 'command', 'command': 'goto', 'target_question': 3, 'answer_action': 'none', 'answer_text': None, 'spoken_message': 'Going to question 3.', 'requires_confirmation': False, 'choice_letter': None}
+[2026-03-09T16:24:55.849092] ACTION: {'action': 'command', 'command': 'goto', 'meta': {'type': 'command', 'command': 'goto', 'target_question': 3, 'answer_action': 'none', 'answer_text': None, 'spoken_message': 'Going to question 3.', 'requires_confirmation': False, 'choice_letter': None}, 'message': 'Going to question 3.'}
+--------------------
+[2026-03-09T19:39:10.632957] STT: Go to question number seven.
+[2026-03-09T19:39:10.632957] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T19:39:10.632957] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T19:39:29.702810] STT: Go to question seven.
+[2026-03-09T19:39:29.702810] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T19:39:29.702810] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T19:39:55.056022] STT: Go to question number seven.
+[2026-03-09T19:39:55.056022] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T19:39:55.056022] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------
+[2026-03-09T19:40:25.414856] STT: Go to question number seven.
+[2026-03-09T19:40:25.414856] LLM: {'type': 'clarification', 'command': 'none', 'answer_action': 'none', 'spoken_message': "Sorry, I didn't understand that. Could you please repeat?", 'requires_confirmation': False}
+[2026-03-09T19:40:25.414856] ACTION: {'action': 'repeat_input', 'message': "Sorry, I didn't understand that. Could you please repeat?"}
+--------------------

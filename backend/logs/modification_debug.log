@@ -1,0 +1,277 @@
+
+============================================================
+[2026-03-09 14:36:38] PROMPT SENT TO LLM
+============================================================
+previous_answer : 'Well, the processing test is is the process.'
+instruction     : 'Change the ANU. Photosynthesis is a process.'
+
+--- FULL PROMPT ---
+You are an answer editor for a voice examination system.
+A student recorded a voice answer and is now giving a spoken modification instruction.
+
+CURRENT ANSWER:
+Well, the processing test is is the process.
+
+STUDENT'S INSTRUCTION:
+Change the ANU. Photosynthesis is a process.
+
+TASK:
+1. Decide if the instruction is asking to ADD, CHANGE, REPLACE, or DELETE content.
+2. If YES — apply the change and return the COMPLETE updated answer.
+3. If NO (e.g. it is a question, a random statement, or unclear) — set applied to false.
+
+VALID modification examples:
+  - 'change X to Y'  →  swap X for Y inside the answer
+  - 'replace X with Y'  →  same as above
+  - 'change my whole answer to X'  →  replace everything with X
+  - 'add X'  /  'also include X'  →  append X naturally
+  - 'remove X'  /  'delete X'  →  remove that part
+  - 'change the second sentence to X'  →  replace that specific sentence
+
+RULES for the answer:
+  - Return the COMPLETE updated answer text (not just the changed part)
+  - If instruction replaces everything, return only the new content
+  - If previous answer is empty/none, treat any instruction as the fresh answer
+  - Do NOT add explanations, quotes, or meta-text inside updated_answer
+
+Respond with ONLY this JSON — no markdown fences, no extra text:
+{"applied": true, "updated_answer": "complete updated answer here"}
+OR if instruction is not a modification:
+{"applied": false, "updated_answer": ""}
+
+
+============================================================
+[2026-03-09 14:36:38] EXCEPTION
+============================================================
+404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+
+============================================================
+[2026-03-09 14:41:08] PROMPT SENT TO LLM
+============================================================
+previous_answer : 'For the processing, it is a process.'
+instruction     : 'Change the answer to for processing the series is the process.'
+
+--- FULL PROMPT ---
+You are an answer editor for a voice examination system.
+A student recorded a voice answer and is now giving a spoken modification instruction.
+
+CURRENT ANSWER:
+For the processing, it is a process.
+
+STUDENT'S INSTRUCTION:
+Change the answer to for processing the series is the process.
+
+TASK:
+1. Decide if the instruction is asking to ADD, CHANGE, REPLACE, or DELETE content.
+2. If YES — apply the change and return the COMPLETE updated answer.
+3. If NO (e.g. it is a question, a random statement, or unclear) — set applied to false.
+
+VALID modification examples:
+  - 'change X to Y'  →  swap X for Y inside the answer
+  - 'replace X with Y'  →  same as above
+  - 'change my whole answer to X'  →  replace everything with X
+  - 'add X'  /  'also include X'  →  append X naturally
+  - 'remove X'  /  'delete X'  →  remove that part
+  - 'change the second sentence to X'  →  replace that specific sentence
+
+RULES for the answer:
+  - Return the COMPLETE updated answer text (not just the changed part)
+  - If instruction replaces everything, return only the new content
+  - If previous answer is empty/none, treat any instruction as the fresh answer
+  - Do NOT add explanations, quotes, or meta-text inside updated_answer
+
+Respond with ONLY this JSON — no markdown fences, no extra text:
+{"applied": true, "updated_answer": "complete updated answer here"}
+OR if instruction is not a modification:
+{"applied": false, "updated_answer": ""}
+
+
+============================================================
+[2026-03-09 14:41:08] EXCEPTION
+============================================================
+404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+
+============================================================
+[2026-03-09 14:55:57] PROMPT SENT TO LLM
+============================================================
+You are an answer editor for a voice examination system.
+A student recorded a voice answer and is now giving a spoken modification instruction.
+
+CURRENT ANSWER:
+Photosynthesis is a process.
+
+STUDENT'S INSTRUCTION:
+Add, it is a process where plants at the end of the sentence.
+
+TASK:
+1. If the instruction asks to ADD, CHANGE, REPLACE, or DELETE — apply it and return the COMPLETE updated answer.
+2. If the instruction is NOT a modification (question, random statement) — set applied to false.
+
+Examples:
+  change X to Y → swap X for Y
+  add X → append X naturally
+  remove X → delete that part
+  change my whole answer to X → replace everything with X
+
+RULES:
+  - Return the COMPLETE updated answer (not just the changed part)
+  - Do NOT add explanations or meta-text inside updated_answer
+  - If previous answer is empty, treat any instruction as the fresh answer
+
+Respond with ONLY this JSON (no markdown fences, no extra text):
+{"applied": true, "updated_answer": "complete updated answer here"}
+OR if not a modification:
+{"applied": false, "updated_answer": ""}
+
+============================================================
+[2026-03-09 14:55:58] RAW RESPONSE FROM LLM
+============================================================
+
+
+============================================================
+[2026-03-09 14:55:58] REGEX FALLBACK RESULT
+============================================================
+None
+
+============================================================
+[2026-03-09 15:07:55] PROMPT SENT TO LLM
+============================================================
+You are an answer editor for a voice examination system.
+A student recorded a voice answer and is now giving a spoken modification instruction.
+
+CURRENT ANSWER:
+Photosynthesis is a process.
+
+STUDENT'S INSTRUCTION:
+Add at the end of the sentence that it is a process where
+
+TASK:
+1. If the instruction asks to ADD, CHANGE, REPLACE, or DELETE — apply it and return the COMPLETE updated answer.
+2. If the instruction is NOT a modification (question, random statement) — set applied to false.
+
+Examples:
+  change X to Y → swap X for Y
+  add X → append X naturally
+  remove X → delete that part
+  change my whole answer to X → replace everything with X
+
+RULES:
+  - Return the COMPLETE updated answer (not just the changed part)
+  - Do NOT add explanations or meta-text inside updated_answer
+  - If previous answer is empty, treat any instruction as the fresh answer
+
+Respond with ONLY this JSON (no markdown fences, no extra text):
+{"applied": true, "updated_answer": "complete updated answer here"}
+OR if not a modification:
+{"applied": false, "updated_answer": ""}
+
+============================================================
+[2026-03-09 15:08:23] RAW RESPONSE FROM LLM
+============================================================
+```json
+{"applied": true, "updated_answer": "Photosynthesis is a process where"}
+```
+
+============================================================
+[2026-03-09 15:08:23] REGEX FALLBACK RESULT
+============================================================
+Photosynthesis is a process where
+
+============================================================
+[2026-03-09 15:08:23] FINAL DECISION
+============================================================
+SUCCESS - Updated to: Photosynthesis is a process where
+
+============================================================
+[2026-03-09 15:09:08] PROMPT SENT TO LLM
+============================================================
+You are an answer editor for a voice examination system.
+A student recorded a voice answer and is now giving a spoken modification instruction.
+
+CURRENT ANSWER:
+Photosynthesis is a process where
+
+STUDENT'S INSTRUCTION:
+Change photosynthesis to it.
+
+TASK:
+1. If the instruction asks to ADD, CHANGE, REPLACE, or DELETE — apply it and return the COMPLETE updated answer.
+2. If the instruction is NOT a modification (question, random statement) — set applied to false.
+
+Examples:
+  change X to Y → swap X for Y
+  add X → append X naturally
+  remove X → delete that part
+  change my whole answer to X → replace everything with X
+
+RULES:
+  - Return the COMPLETE updated answer (not just the changed part)
+  - Do NOT add explanations or meta-text inside updated_answer
+  - If previous answer is empty, treat any instruction as the fresh answer
+
+Respond with ONLY this JSON (no markdown fences, no extra text):
+{"applied": true, "updated_answer": "complete updated answer here"}
+OR if not a modification:
+{"applied": false, "updated_answer": ""}
+
+============================================================
+[2026-03-09 15:09:10] RAW RESPONSE FROM LLM
+============================================================
+{"applied": true, "updated_answer": "It is a process where"}
+
+============================================================
+[2026-03-09 15:09:10] PARSED JSON
+============================================================
+{'applied': True, 'updated_answer': 'It is a process where'}
+
+============================================================
+[2026-03-09 15:09:10] FINAL DECISION
+============================================================
+SUCCESS - Updated to: It is a process where
+
+============================================================
+[2026-03-09 15:09:48] PROMPT SENT TO LLM
+============================================================
+You are an answer editor for a voice examination system.
+A student recorded a voice answer and is now giving a spoken modification instruction.
+
+CURRENT ANSWER:
+It is a process where
+
+STUDENT'S INSTRUCTION:
+Remove where from the end of the sentence.
+
+TASK:
+1. If the instruction asks to ADD, CHANGE, REPLACE, or DELETE — apply it and return the COMPLETE updated answer.
+2. If the instruction is NOT a modification (question, random statement) — set applied to false.
+
+Examples:
+  change X to Y → swap X for Y
+  add X → append X naturally
+  remove X → delete that part
+  change my whole answer to X → replace everything with X
+
+RULES:
+  - Return the COMPLETE updated answer (not just the changed part)
+  - Do NOT add explanations or meta-text inside updated_answer
+  - If previous answer is empty, treat any instruction as the fresh answer
+
+Respond with ONLY this JSON (no markdown fences, no extra text):
+{"applied": true, "updated_answer": "complete updated answer here"}
+OR if not a modification:
+{"applied": false, "updated_answer": ""}
+
+============================================================
+[2026-03-09 15:09:49] RAW RESPONSE FROM LLM
+============================================================
+{"applied": true, "updated_answer": "It is a process"}
+
+============================================================
+[2026-03-09 15:09:49] PARSED JSON
+============================================================
+{'applied': True, 'updated_answer': 'It is a process'}
+
+============================================================
+[2026-03-09 15:09:49] FINAL DECISION
+============================================================
+SUCCESS - Updated to: It is a process

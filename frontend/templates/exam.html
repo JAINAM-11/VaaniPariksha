@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaaniPariksha — Exam Interface</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234F46E5%22/><path d=%22M25 30h50M25 50h50M25 70h30%22 stroke=%22%23E0E7FF%22 stroke-width=%228%22 stroke-linecap=%22round%22/><path d=%22M60 65l10 10 20-20%22 stroke=%22%2310B981%22 stroke-width=%2210%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+  <meta name="description" content="Voice-based exam interface. Answer questions using your voice — seamless and secure.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css?v=2.1">
+</head>
+<body class="exam-page" id="examBody" oncontextmenu="preventAction(event)" oncopy="preventAction(event)" oncut="preventAction(event)">
+
+  <!-- Start indicator (Hands-free accessibility trigger) -->
+  <div id="startOverlay" class="start-overlay">
+    <div class="start-box">
+      <div class="start-icon">🎙️</div>
+      <h2 class="start-title">VaaniPariksha</h2>
+      <p class="start-msg">Ready to begin your examination?</p>
+      <button class="btn-primary btn-large" onclick="startExamEngagement()">🏁 Take Exam</button>
+      <p class="start-hint">Click the button or press any key to start</p>
+    </div>
+  </div>
+
+  <!-- Lockdown overlay (on exit attempt) -->
+  <div id="lockdownOverlay" class="lockdown-overlay" style="display:none">
+    <div class="lockdown-box">
+      <div class="lockdown-icon">⚠️</div>
+      <div class="lockdown-title">Exam Integrity Warning</div>
+      <div class="lockdown-msg">Leaving the exam tab is not permitted. Your attempt has been flagged.</div>
+      <button class="btn-primary" onclick="dismissLockdown()">Return to Exam</button>
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="exam-header">
+    <div class="exam-brand">
+      <span>🎙</span>
+      <span class="brand-name">VaaniPariksha</span>
+    </div>
+    <div class="exam-info">
+      <span id="examTitleDisplay" class="exam-title-display">Loading...</span>
+    </div>
+    <div class="exam-controls">
+      <div class="timer-box" id="timerBox">
+        <span class="timer-icon">⏱</span>
+        <span id="timerDisplay" class="timer-text">60:00</span>
+      </div>
+      <button class="btn-danger" id="submitBtn" onclick="confirmSubmit()">Submit Exam</button>
+    </div>
+  </header>
+
+  <!-- Mobile Timer and Submit (Sticky) -->
+  <div class="mobile-timer-submit">
+    <div class="timer-box" id="mobileTimerBox">
+      <span class="timer-icon">⏱</span>
+      <span id="mobileTimerDisplay" class="timer-text">60:00</span>
+    </div>
+    <button class="btn-danger" id="mobileSubmitBtn" onclick="confirmSubmit()">Submit Exam</button>
+  </div>
+
+
+  <!-- Onboarding UI (Dedicated Student ID Collection) -->
+  <div id="onboardingUI" class="onboarding-full">
+    <div class="onboarding-box">
+      <div class="onboarding-icon">🎙️</div>
+      <h1 class="onboarding-title">VaaniPariksha Initialization</h1>
+      <div class="voice-status-onboarding">
+        <div class="onboarding-orb" id="onboardingOrb">
+          <div class="voice-rings"></div>
+          <span class="voice-mic">🎙</span>
+        </div>
+        <p id="onboardingVoiceStatus" class="voice-status-text">Ready</p>
+      </div>
+
+      <div id="idInputWrap" class="onboarding-input-group" style="display:none; margin-top: 2rem;">
+        <div class="registration-form">
+          <div class="manual-id-field">
+            <input type="text" id="manualIdInput" class="id-manual-input" placeholder="STUDENT ID" autocomplete="off" oninput="toggleIdSubmitBtn()">
+          </div>
+          <button id="manualIdSubmitBtn" class="id-verify-btn" onclick="submitManualId()" style="display: none;">Submit</button>
+          <p class="id-help">You can say your ID or type it above.</p>
+        </div>
+        <button id="startExamBtn" class="btn-primary btn-large" onclick="finalStart()" style="display:none; margin: 2rem auto;">🚀 Begin Examination</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main layout (Hidden initially) -->
+  <div class="exam-layout" id="examLayout" style="display:none">
+
+    <!-- Left: Progress sidebar -->
+    <aside class="progress-sidebar" role="complementary" aria-label="Question Navigator">
+      <div class="sidebar-title">Questions</div>
+      <div class="question-nav-grid" id="questionNav" role="navigation" aria-label="Question list">
+        <!-- Filled by JS -->
+      </div>
+      <div class="progress-summary">
+        <div class="prog-item prog-answered">
+          <span class="prog-dot"></span>
+          <span>Answered: <b id="countAnswered">0</b></span>
+        </div>
+        <div class="prog-item prog-skipped">
+          <span class="prog-dot"></span>
+          <span>Skipped: <b id="countSkipped">0</b></span>
+        </div>
+        <div class="prog-item prog-unanswered">
+          <span class="prog-dot"></span>
+          <span>Remaining: <b id="countRemaining">0</b></span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center: Question display -->
+    <main class="question-main" role="main">
+
+      <!-- Question card -->
+      <div class="question-card" id="questionCard">
+        <div class="q-header">
+          <span class="q-number" id="qNumber">Q1</span>
+          <span class="q-type-badge" id="qTypeBadge">Short Answer</span>
+          <span class="q-marks" id="qMarks">1 mark</span>
+        </div>
+        <div class="q-text" id="qText" aria-live="polite">Loading question...</div>
+        <div class="q-options" id="qOptions" style="display:none"></div>
+
+        <!-- Answer section -->
+        <div class="answer-section">
+          <div class="answer-label">
+            <span>Your Answer</span>
+            <span class="answer-method-badge" id="answerMethodBadge">🎙 Voice</span>
+          </div>
+          <div class="answer-display" id="answerDisplay" aria-live="polite" aria-label="Current answer">
+            <span class="answer-placeholder">Speak or type your answer...</span>
+          </div>
+          <!-- Keyboard fallback -->
+          <textarea id="keyboardAnswer" class="keyboard-answer hidden" 
+                    placeholder="Type your answer here (keyboard fallback)..."
+                    rows="3"></textarea>
+          <div class="answer-actions">
+            <button class="btn-text" onclick="toggleKeyboard()" id="keyboardToggle" title="Switch to keyboard input">⌨️ Type Instead</button>
+            <button class="btn-text" onclick="saveKeyboardAnswer()" id="saveKbdBtn" style="display:none">💾 Save</button>
+            <button class="btn-text" onclick="readBackAnswer()" id="readBackBtn">🔊 Read Back</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <div class="nav-buttons">
+        <button class="btn-nav" id="prevBtn" onclick="navigatePrev()" aria-label="Previous question">← Previous</button>
+        <button class="btn-nav btn-skip" onclick="skipQuestion()" aria-label="Skip question">⤭ Skip</button>
+        <button class="btn-nav btn-next" id="nextBtn" onclick="navigateNext()" aria-label="Next question">Next →</button>
+      </div>
+    </main>
+
+    <!-- Right: Voice panel -->
+    <aside class="voice-panel" role="complementary" aria-label="Voice Controls">
+      <!-- Voice indicator -->
+      <div class="voice-indicator-wrap">
+        <div class="voice-orb" id="voiceOrb" onclick="toggleListening()" role="button" 
+             tabindex="0" aria-label="Toggle voice input" onkeydown="if(event.key==='Enter')toggleListening()">
+          <div class="voice-rings"></div>
+          <span class="voice-mic" id="voiceMic">🎙</span>
+        </div>
+        <div class="voice-status" id="voiceStatus">Click to speak</div>
+      </div>
+
+      <!-- Last heard -->
+      <div class="voice-transcript-box">
+        <div class="voice-transcript-label">I Heard:</div>
+        <div class="voice-transcript" id="voiceTranscript" aria-live="polite">—</div>
+        <div class="confidence-bar-wrap" id="confidenceWrap" style="display:none">
+          <div class="confidence-bar" id="confidenceBar"></div>
+          <div class="confidence-label" id="confidenceLabel"></div>
+        </div>
+      </div>
+
+      <!-- Confirmation prompt -->
+      <div class="confirm-prompt" id="confirmPrompt" style="display:none">
+        <div class="confirm-text" id="confirmText"></div>
+        <div class="confirm-buttons">
+          <button class="btn-confirm" id="confirmBtn" onclick="confirmAnswer()">✅ Confirm</button>
+          <button class="btn-repeat" id="repeatBtn" onclick="repeatAnswer()">🔄 Repeat</button>
+        </div>
+      </div>
+
+      <!-- Voice commands help -->
+      <div class="voice-help">
+        <div class="voice-help-title" onclick="this.classList.toggle('active')">Voice Commands</div>
+        <ul class="voice-cmd-list" role="list">
+          <li>"<b>Next question</b>"</li>
+          <li>"<b>Previous question</b>"</li>
+          <li>"<b>Go to question 5</b>"</li>
+          <li>"<b>Repeat question</b>"</li>
+          <li>"<b>Skip question</b>"</li>
+          <li>"<b>Give me status</b>"</li>
+          <li>"<b>Speed up</b>" / "<b>Slow down</b>"</li>
+          <li>"<b>Submit</b>"</li>
+        </ul>
+      </div>
+
+      <!-- Mobile Only Question Status -->
+      <div class="mobile-question-status">
+        <div class="status-title">Question Status</div>
+        <div class="mobile-progress-summary">
+          <div class="mobile-prog-item">
+            <span class="mobile-prog-dot mobile-prog-answered"></span>
+            <span>Answered: <b id="mobileCountAnswered">0</b></span>
+          </div>
+          <div class="mobile-prog-item">
+            <span class="mobile-prog-dot mobile-prog-skipped"></span>
+            <span>Skipped: <b id="mobileCountSkipped">0</b></span>
+          </div>
+          <div class="mobile-prog-item">
+            <span class="mobile-prog-dot mobile-prog-unanswered"></span>
+            <span>Remaining: <b id="mobileCountRemaining">0</b></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speed control -->
+      <div class="speed-control">
+        <label class="speed-label">🔊 TTS Speed: <b id="speedLabel">1.0x</b></label>
+        <input type="range" id="speedSlider" class="speed-slider" min="0.5" max="2.0" step="0.1" value="1.0" 
+               oninput="updateSpeed(this.value)" aria-label="Speech speed">
+      </div>
+    </aside>
+  </div>
+
+  <!-- Submit confirmation modal -->
+  <div id="submitModal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="Submit exam confirmation">
+    <div class="modal-box">
+      <div class="modal-icon">📋</div>
+      <h2 class="modal-title">Submit Exam?</h2>
+      <div class="modal-stats" id="modalStats"></div>
+      <p class="modal-note">Once submitted, you cannot change your answers. The system will generate your answer PDF.</p>
+      <div class="modal-actions">
+        <button class="btn-danger" onclick="submitExam()">✅ Yes, Submit</button>
+        <button class="btn-secondary" onclick="closeModal()">↩ Continue Exam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success overlay -->
+  <div id="successOverlay" class="modal-overlay" style="display:none">
+    <div class="modal-box success-box">
+      <div class="modal-icon">🎉</div>
+      <h2 class="modal-title">Exam Submitted!</h2>
+      <p class="modal-note" id="successMsg">Your answers have been captured. Generating PDF...</p>
+      <div class="download-actions" id="downloadActions" style="display:none">
+        <a id="downloadLink" class="btn-primary" href="#" download>📥 Download Answer PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/voice_indicator.js?v=2.1"></script>
+  <script src="/static/js/exam.js?v=2.1"></script>
+</body>
+</html>

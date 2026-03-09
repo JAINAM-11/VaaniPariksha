@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaaniPariksha — Take Exam</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234F46E5%22/><path d=%22M25 30h50M25 50h50M25 70h30%22 stroke=%22%23E0E7FF%22 stroke-width=%228%22 stroke-linecap=%22round%22/><path d=%22M60 65l10 10 20-20%22 stroke=%22%2310B981%22 stroke-width=%2210%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+  <meta name="description" content="VaaniPariksha: AI-powered voice examination system. Seamless, accessible, and inclusive assessment through natural conversation.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="upload-page">
+
+  <!-- Background decoration -->
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <!-- Header -->
+  <header class="top-nav">
+    <div class="brand">
+      <span class="brand-icon">🎙</span>
+      <span class="brand-name">VaaniPariksha</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/" class="nav-link active">Take exam</a>
+      <a href="/admin" class="nav-link">Dashboard</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="upload-main">
+    <section class="hero-section">
+      <div class="hero-badge">🚀 AI-Powered Voice Interaction</div>
+      <h1 class="hero-title gradient-text">Voice-Based Examination Platform</h1>
+      <p class="hero-sub">Upload your exam PDF → Questions extracted → Students participate in a seamless voice-based examination with real-time AI assistance.</p>
+    </section>
+
+    <!-- Features strip -->
+    <div class="feature-strip">
+      <div class="feat-pill">🎙 Conversational UI</div>
+      <div class="feat-pill">📄 Automated PDF Parsing</div>
+      <div class="feat-pill">🔄 Natural Voice Editing</div>
+      <div class="feat-pill">🛡 Secure Assessment</div>
+      <div class="feat-pill">♿ Universal Accessibility</div>
+    </div>
+
+    <!-- Available Exams List -->
+    <div class="card available-exams-card" id="availableExamsContainer" style="margin-top: 2rem;">
+      <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Choose an Exam to Start</h3>
+      <div id="examsList" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Exam items will be injected here via JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/static/js/upload.js"></script>
+</body>
+</html>
